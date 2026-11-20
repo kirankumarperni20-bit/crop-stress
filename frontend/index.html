@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropCare | Smart Crop Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🌱 CropCare</div>
+    <nav>Smart Agriculture | Telangana & Andhra Pradesh</nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Smart Crop Stress Detection</h1>
+        <p>Analyze your crop conditions and make informed irrigation decisions.</p>
+    </section>
+
+    <form id="cropForm">
+
+        <h2>📍 Field Information</h2>
+        <div class="form-grid">
+            <label>State
+                <input name="state" placeholder="Telangana" required>
+            </label>
+            <label>District
+                <input name="district" placeholder="Hyderabad" required>
+            </label>
+            <label>Crop Type
+                <input name="crop_type" placeholder="Rice" required>
+            </label>
+            <label>Soil Type
+                <input name="soil_type" placeholder="Black soil" required>
+            </label>
+            <label>Irrigation Method
+                <input name="irrigation_method" placeholder="Drip" required>
+            </label>
+            <label>Growth Stage
+                <input name="growth_stage" placeholder="Vegetative" required>
+            </label>
+        </div>
+
+        <h2>🌡️ Soil & Weather Conditions</h2>
+        <div class="form-grid">
+            <label>Soil Moisture (m³/m³)
+                <input type="number" step="any" name="soil_moisture_m3_m3" required>
+            </label>
+            <label>Soil Temperature (°C)
+                <input type="number" step="any" name="soil_temperature_c" required>
+            </label>
+            <label>Air Temperature (°C)
+                <input type="number" step="any" name="air_temperature_c" required>
+            </label>
+            <label>Relative Humidity (%)
+                <input type="number" step="any" name="relative_humidity_pct" required>
+            </label>
+            <label>Rainfall (mm/day)
+                <input type="number" step="any" name="rainfall_mm_day" required>
+            </label>
+            <label>ET0 (mm/day)
+                <input type="number" step="any" name="et0_mm_day" required>
+            </label>
+            <label>Actual ET (mm/day)
+                <input type="number" step="any" name="actual_et_mm_day" required>
+            </label>
+            <label>NDVI
+                <input type="number" step="any" name="ndvi" required>
+            </label>
+        </div>
+
+        <h2>🧪 Soil Nutrients & Irrigation</h2>
+        <div class="form-grid">
+            <label>Soil pH
+                <input type="number" step="any" name="soil_ph" required>
+            </label>
+            <label>Organic Carbon (%)
+                <input type="number" step="any" name="soil_organic_carbon_pct" required>
+            </label>
+            <label>Nitrogen (kg/ha)
+                <input type="number" step="any" name="nitrogen_kg_ha" required>
+            </label>
+            <label>Phosphorus (kg/ha)
+                <input type="number" step="any" name="phosphorus_kg_ha" required>
+            </label>
+            <label>Potassium (kg/ha)
+                <input type="number" step="any" name="potassium_kg_ha" required>
+            </label>
+            <label>Electrical Conductivity (dS/m)
+                <input type="number" step="any" name="electrical_conductivity_ds_m" required>
+            </label>
+            <label>Irrigated in last 7 days?
+                <select name="irrigated_in_last_7_days" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </label>
+        </div>
+
+        <button type="submit" id="analyzeBtn">Analyze Crop</button>
+    </form>
+
+    <section id="results" class="results hidden">
+        <h2>📊 Crop Analysis Results</h2>
+        <div class="result-grid">
+            <div class="result-card">
+                <span>Stress Risk</span>
+                <h3 id="risk">--</h3>
+            </div>
+            <div class="result-card">
+                <span>Stress Index</span>
+                <h3 id="stress">--</h3>
+            </div>
+            <div class="result-card">
+                <span>Irrigation Score</span>
+                <h3 id="score">--</h3>
+            </div>
+            <div class="result-card">
+                <span>Irrigation Priority</span>
+                <h3 id="priority">--</h3>
+            </div>
+        </div>
+        <p id="notice"></p>
+    </section>
+
+    <p id="error" class="error"></p>
+</main>
+
+<footer>
+    CropCare | Crop Stress Decision Support System
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
